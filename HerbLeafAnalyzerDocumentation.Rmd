@@ -1,0 +1,79 @@
+```markdown
+---
+title: "Herb Leaf Analyzer Documentation"
+author: "Sindayigaya Jean Marie Vianney"
+date: "2024-04-15"
+output: html_document
+---
+
+```
+
+# Introduction
+
+This document provides an overview and examples of how to use the **Herb Leaf Analyzer** package. Below is a list of functionalities provided by the package. For more details and updates, visit the [Herb Leaf Analyzer GitHub repository](https://github.com/JeanMarie3/HerbLeafAnalyzer).
+
+## Package Functionalities
+
+- **Load Herb Data**: Load data from `.RData` files containing detailed information about different herbs.
+- **Analyze Leaf Color Distributions**: Visualize the distribution of colors found in herb leaves to understand their diversity.
+- **Calculate Leaf Areas**: Compute the area of herb leaves, a critical measure in various botanical and ecological studies.
+- **Compare Leaf Shapes**: Compare the geometrical shapes of leaves from different herb species to highlight their morphological differences.
+- **Display Data in a Table**: Present herb data in a structured table format, allowing for easy visualization and comparison.
+
+
+```{r load-functions}
+# Loading functions
+source("~/Documents/HerbLeafAnalyzer/R/HerbLeafAnalyzer.R")
+```
+
+# Functions Documentation
+
+## Load Herb Data
+
+The `loadHerbData` function loads herb data from a specified `.RData` file.
+
+
+```{r load-data}
+# Load the data
+data <- loadHerbData("herbData.RData")
+```
+
+## Plot Leaf Color Distribution
+
+The `plotLeafColorDistribution` function creates a bar plot showing the distribution of leaf colors.
+
+```{r color-distribution, fig.cap="Leaf Color Distribution"}
+# Plotting leaf color distribution
+plot <- plotLeafColorDistribution(data)
+plot
+```
+
+## Calculate Leaf Area
+
+The `calculateLeafArea` function calculates the area of a leaf based on provided length and width.
+
+```{r leaf-area}
+# Calculating leaf area
+area <- calculateLeafArea(7, 3)  # Example dimensions in cm
+area
+```
+
+## Compare Leaf Shape
+
+The `compareLeafShape` function compares the shape of leaves from two specified species by plotting the ratio of leaf length to width.
+
+```{r leaf-shape-comparison, fig.cap="Comparison of Leaf Shape Ratios"}
+# Comparing leaf shapes
+compare_plot <- compareLeafShape(data, "Species A", "Species B")
+compare_plot
+```
+
+## Display Herb Table
+
+The `displayHerbTable` function returns the provided data as a table.
+
+```{r display-table}
+# Displaying data table
+table <- displayHerbTable(data)
+table
+```

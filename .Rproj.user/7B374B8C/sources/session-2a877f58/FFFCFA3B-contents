@@ -1,0 +1,14 @@
+Package: HerbLeafAnalyzer
+Type: Package
+Title: Plant Leaf Analysis Tools for Medicinal Herbs
+Version: 0.1.0
+Date: 2024-04-15
+Author: Sindayigaya Jean Marie Vianney
+Description: Provides tools for analyzing medicinal herb leaves, including functions to load data, plot color distributions, calculate leaf areas, compare leaf shapes, and display herb characteristics in a tabular format.
+Depends: R (>= 3.5.0)
+Imports:
+    ggplot2
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.1

@@ -1,0 +1,90 @@
+```markdown
+---
+title: "Guide to Social Media Analysis Functions"
+author: "A. Rahman"
+date: "2024-04-15"
+output: html_document
+---
+
+```
+# Introduction
+
+This document is a comprehensive guide that demonstrates the usage of functions provided by the SocialNetAnalyser package for social media data analysis. The guide covers:
+
+- How to load and inspect the social media data.
+- Methods to calculate basic engagement metrics.
+- Techniques to visualize engagement trends and posting trends over time.
+- Steps to perform a dummy sentiment analysis.
+
+For the source code, please visit the [SocialNetAnalyser - GitHub repository](https://github.com/rahmanumar21/SocialNetAnalyser).
+For more details on using R Markdown, see [R Markdown's official site](http://rmarkdown.rstudio.com).
+
+
+# Preliminaries
+
+Before proceeding, we need to set up our environment by loading the necessary functions and data.
+
+## Load Required Functions and Data
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load-functions}
+# Loading functions from the SocialNetAnalyser package
+source("~/SocialNetAnalyser/R/main.R")
+
+# Loading the dataset
+load("data/social_data.RData")
+```
+
+## Inspect Data Structure
+
+```{r inspect-social-data}
+# It's important to understand the structure of our data before analysis
+str(social_data)
+```
+
+# Data Analysis
+
+With our data loaded and understood, we can now proceed to analyze it using various functions.
+
+## Calculate Metrics
+
+Calculate and summarize the basic engagement metrics from the social media data.
+
+```{r calculate-metrics}
+metrics_table <- calculate_metrics(social_data)
+metrics_table
+```
+
+## Engagement Trends Visualization
+
+Visualize the engagement trends over time using the number of likes, comments, and shares.
+
+```{r engagement-plot}
+engagement_plot <- plot_engagement(social_data)
+print(engagement_plot)
+```
+
+## Sentiment Analysis
+
+Assign a random sentiment score to each social media post and display the results.
+
+```{r sentiment-analysis}
+sentiment_results <- analyse_sentiment(social_data)
+print(sentiment_results)
+```
+
+## Posting Trends Visualization
+
+Plot the trends showing the number of posts over time.
+
+```{r post-trends}
+post_trend_plot <- plot_post_trends(social_data)
+print(post_trend_plot)
+```
+
+# Conclusion
+
+The SocialNetAnalyser package provides a suite of tools that makes the analysis of social media data both accessible and insightful. By employing these functions, we can derive meaningful patterns and metrics from social data.
